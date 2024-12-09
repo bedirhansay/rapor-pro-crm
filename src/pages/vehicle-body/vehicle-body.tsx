@@ -15,11 +15,11 @@ export const VehicleBodyInfo = () => {
     { id: 9, label: 'Sökülüp Takılmış', color: '#87CEEB' },
   ];
 
-  const [selectedParts, setSelectedParts] = useState({});
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [currentPart, setCurrentPart] = useState('');
+  const [selectedParts, setSelectedParts] = useState<Record<string, string>>({});
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [currentPart, setCurrentPart] = useState<string>('');
 
-  const togglePart = (partId: any, event: any) => {
+  const togglePart = (partId: string, event: any) => {
     setCurrentPart(partId);
     setAnchorEl(event.currentTarget);
   };
@@ -29,7 +29,7 @@ export const VehicleBodyInfo = () => {
   };
 
   const handleChange = (event: any) => {
-    const value = event.target.value;
+    const value = event.target.value as string;
     setSelectedParts((prevState) => ({
       ...prevState,
       [currentPart]: value,
@@ -38,8 +38,8 @@ export const VehicleBodyInfo = () => {
 
   const isPopoverOpen = Boolean(anchorEl);
 
-  const onColor = (partId: any) => {
-    const selectedItem = items.find((item) => item.label === (selectedParts[partId] as any));
+  const onColor = (partId: string) => {
+    const selectedItem = items.find((item) => item.label === selectedParts[partId]);
     return selectedItem ? selectedItem.color : 'white';
   };
 

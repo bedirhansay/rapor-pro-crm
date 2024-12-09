@@ -10,7 +10,7 @@ export const LoginPage = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: any) => {
     console.log('Form Data:', data);
 
     if (data.email === 'test@gmail.com') {
@@ -46,7 +46,6 @@ export const LoginPage = () => {
               error={!!errors.email}
               helperText={(errors.email?.message as string) || ''}
             />
-
 
             {/* Password Field */}
             <TextField
