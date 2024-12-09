@@ -1,0 +1,89 @@
+:root {
+  /*!----Light Mode Background Color----*/
+
+  --bg-primary: var(--white);
+  --bg-primary-alt: var(--white);
+  --bg-primary-hover: var(--gray-50);
+  --bg-primary-solid: var(--gray-950);
+
+  --bg-secondary: var(--gray-50);
+  --bg-secondary-alt: var(--gray-50);
+  --bg-secondary-hover: var(--gray-100);
+  --bg-secondary-subtle: var(--gray-25);
+  --bg-secondary-solid: var(--gray-600);
+
+  --bg-tertiary: var(--gray-100);
+  --bg-quaternary: var(--gray-200);
+
+  --bg-active: var(--gray-50);
+
+  --bg-disabled: var(--gray-100);
+  --bg-disabled-subtle: var(--gray-50);
+
+  --bg-overlay: var(--gray-950);
+
+  --bg-brand-primary: var(--brand-50);
+  --bg-brand-primary-alt: var(--brand-50);
+  --bg-brand-secondary: var(--brand-100);
+  --bg-brand-solid: var(--brand-600);
+  --bg-brand-solid-hover: var(--brand-700);
+  --bg-brand-section: var(--brand-800);
+  --bg-brand-section-subtle: var(--brand-700);
+
+  --bg-error-primary: var(--error-50);
+  --bg-error-secondary: var(--error-100);
+  --bg-error-solid: var(--error-600);
+
+  --bg-warning-primary: var(--warning-600);
+  --bg-warning-secondary: var(--warning-600);
+  --bg-warning-solid: var(--warning-600);
+
+  --bg-success-primary: var(--success-600);
+  --bg-success-secondary: var(--success-600);
+  --bg-success-solid: var(--success-600);
+}
+
+.dark {
+  /*!----Dark Mode Background Color----*/
+
+  --bg-primary: hsl(240, 2%, 12%);
+  --bg-primary-alt: hsl(240, 2%, 12%);
+  --bg-primary-hover: hsl(240, 2%, 12%);
+  --bg-primary-solid: var(--gray-dark-900);
+
+  --bg-secondary: hsl(240, 2%, 12%);
+  --bg-secondary-alt: var(--gray-dark-950);
+  --bg-secondary-hover: var(--gray-dark-800);
+  --bg-secondary-subtle: var(--gray-dark-900);
+  --bg-secondary-solid: var(--gray-dark-600);
+
+  --bg-tertiary: var(--gray-dark-800);
+  --bg-quaternary: var(--gray-dark-700);
+
+  --bg-active: hsl(240, 2%, 12%);
+
+  --bg-disabled: var(--gray-dark-800);
+  --bg-disabled-subtle: var(--gray-dark-900);
+
+  --bg-overlay: var(--gray-dark-800);
+
+  --bg-brand-primary: var(--brand-500);
+  --bg-brand-primary-alt: var(--gray-dark-800);
+  --bg-brand-secondary: var(--brand-600);
+  --bg-brand-solid: var(--brand-600);
+  --bg-brand-solid-hover: var(--brand-500);
+  --bg-brand-section: var(--gray-dark-800);
+  --bg-brand-section-subtle: var(--gray-dark-950);
+
+  --bg-error-primary: var(--error-500);
+  --bg-error-secondary: var(--error-600);
+  --bg-error-solid: var(--error-600);
+
+  --bg-warning-primary: var(--warning-500);
+  --bg-warning-secondary: var(--warning-600);
+  --bg-warning-solid: var(--warning-600);
+
+  --bg-success-primary: var(--success-500);
+  --bg-success-secondary: var(--success-600);
+  --bg-success-solid: var(--success-600);
+}

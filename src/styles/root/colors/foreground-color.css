@@ -1,0 +1,75 @@
+:root {
+  /*!----Light Mode Foreground Color----*/
+
+  --fg-primary: var(--gray-900);
+
+  --fg-secondary: var(--gray-700);
+  --fg-secondary-hover: var(--gray-800);
+
+  --fg-tertiary: var(--gray-600);
+  --fg-tertiary-hover: var(--gray-700);
+
+  --fg-quaternary: var(--gray-500);
+  --fg-quaternary-hover: var(--gray-600);
+
+  --fg-quinary: var(--gray-400);
+  --fg-quinary-hover: var(--gray-500);
+
+  --fg-senary: var(--gray-300);
+  --fg-white: var(--white);
+
+  --fg-disabled: var(--gray-400);
+  --fg-disabled-subtle: var(--gray-300);
+
+  --fg-brand-primary: var(--brand-600);
+  --fg-brand-primary-alt: var(--brand-600);
+
+  --fg-brand-secondary: var(--brand-500);
+
+  --fg-error-primary: var(--error-600);
+  --fg-error-secondary: var(--error-500);
+
+  --fg-warning-primary: var(--warning-600);
+  --fg-warning-secondary: var(--warning-500);
+
+  --fg-success-primary: var(--success-600);
+  --fg-success-secondary: var(--success-500);
+}
+
+.dark {
+  /*!----Dark Mode Foreground Color----*/
+
+  --fg-primary: var(--white);
+
+  --fg-secondary: var(--gray-dark-300);
+  --fg-secondary-hover: var(--gray-dark-200);
+
+  --fg-tertiary: var(--gray-dark-400);
+  --fg-tertiary-hover: var(--gray-dark-300);
+
+  --fg-quaternary: var(--gray-dark-400);
+  --fg-quaternary-hover: var(--gray-dark-300);
+
+  --fg-quinary: var(--gray-dark-500);
+  --fg-quinary-hover: var(--gray-dark-400);
+
+  --fg-senary: var(--gray-dark-600);
+  --fg-white: var(--white);
+
+  --fg-disabled: var(--gray-dark-500);
+  --fg-disabled-subtle: var(--gray-dark-600);
+
+  --fg-brand-primary: var(--brand-500);
+  --fg-brand-primary-alt: var(--brand-500);
+
+  --fg-brand-secondary: var(--brand-500);
+
+  --fg-error-primary: var(--error-500);
+  --fg-error-secondary: var(--error-400);
+
+  --fg-warning-primary: var(--warning-500);
+  --fg-warning-secondary: var(--warning-400);
+
+  --fg-success-primary: var(--success-500);
+  --fg-success-secondary: var(--success-400);
+}

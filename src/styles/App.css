@@ -1,0 +1,146 @@
+@import '@nes/desing-system/styles/less.css';
+@import '@nes/desing-system/styles/tailwind.css';
+@import './tailwind.css';
+@import './root/index.root.css';
+:root {
+  /* ! Background Colors */
+
+  --nds-background: hsl(0, 0%, 100%);
+}
+
+.dark {
+  --variant-color: #1b1b1b;
+  /* --nds-background: hsl(240, 3%, 9%); */
+  --nds-background: #111111;
+}
+
+body {
+  background: var(--nds-background);
+  color: var(--nds-foreground);
+  scroll-behavior: smooth;
+}
+
+.main {
+  background: var(--nds-background);
+}
+
+.side {
+  background-color: var(--variant-color);
+}
+
+::-webkit-scrollbar {
+  height: 4px !important;
+  width: 4px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-800);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: var(--error-300);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: var(--gray-700);
+}
+
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+#nprogress .bar {
+  background: var(--brand-600);
+}
+
+#nprogress .spinner-icon {
+  border-top-color: var(--brand-600);
+  border-left-color: var(--brand-600);
+  display: none;
+}
+
+.nds-select-item-empty {
+  padding: 8px;
+}
+
+.nds-select-multiple .nds-select-selector {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.nds-select-multiple .nds-select-selection-search-input {
+  width: 100% !important;
+  min-width: 100px;
+  padding: 4px 8px;
+  border: none;
+  outline: none;
+}
+
+.h-size {
+  height: calc(100vh - 40px);
+}
+
+.h-drawer {
+  height: calc(100vh);
+}
+
+.h-boron {
+  height: calc(100vh - 82px);
+}
+
+.h-beryllium {
+  height: calc(100vh - 82px);
+}
+
+@keyframes smoothWidthExpand {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 256px;
+  }
+}
+
+@keyframes smoothWidthCloseExpand {
+  0% {
+    width: 256px;
+  }
+
+  100% {
+    width: 0px;
+    display: none;
+  }
+}
+
+@keyframes slideDownMenuAccordion {
+  0% {
+    height: 0px;
+  }
+
+  100% {
+    height: 100%;
+  }
+}
+
+.expand-animation {
+  animation: smoothWidthExpand 0.2s ease-in-out forwards;
+}
+.close-expand {
+  animation: smoothWidthCloseExpand 0.2s ease-in-out forwards;
+}
+.slide-down-accordion {
+  animation: slideDownMenuAccordion 1s ease-in-out forwards;
+}

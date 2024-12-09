@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "module": "esnext",
+    "outDir": "./dist",
+    "target": "es6",
+    "lib": ["es6", "dom"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@pages/*": ["src/pages/*"],
+      "@components/*": ["src/components/*"],
+      "@routes/*": ["src/lib/routes/*"],
+      "@layout/*": ["src/layout/*"],
+      "@middleware/*": ["src/lib/middleware/*"],
+      "@utils/*": ["src/lib/utils/*"],
+      "@hooks/*": ["src/lib/hooks/*"],
+      "@helper/*": ["src/helper/*"]
+    }
+  },
+  "include": ["src", "src/lib/hooks/full-screen.tsx"]
+}
