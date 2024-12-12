@@ -1,14 +1,13 @@
-import { Link } from 'react-router-dom';
+import { PlusCircle } from 'lucide-react';
+import { Link, NavLink } from 'react-router-dom';
+import LogoIcon from '../../images/icon/logo-icon.png';
+import { Button } from '../ui/button';
+import DarkModeSwitcher from './DarkModeSwitcher';
 import DropdownMessage from './DropdownMessage';
 import DropdownNotification from './DropdownNotification';
 import DropdownUser from './DropdownUser';
-import LogoIcon from '../../images/logo/logo-icon.svg';
-import DarkModeSwitcher from './DarkModeSwitcher';
 
-const Header = (props: {
-  sidebarOpen: string | boolean | undefined;
-  setSidebarOpen: (arg0: boolean) => void;
-}) => {
+const Header = (props: { sidebarOpen: string | boolean | undefined; setSidebarOpen: (arg0: boolean) => void }) => {
   return (
     <header className="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
       <div className="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
@@ -57,10 +56,10 @@ const Header = (props: {
           {/* <!-- Hamburger Toggle BTN --> */}
 
           <Link className="block flex-shrink-0 lg:hidden" to="/">
-            <img src={LogoIcon} alt="Logo" />
+            <img className=" rounded-lg h-8" src={LogoIcon} alt="Logo" />
           </Link>
         </div>
-
+        s
         <div className="hidden sm:block">
           <form action="https://formbold.com/s/unique_form_id" method="POST">
             <div className="relative">
@@ -96,9 +95,15 @@ const Header = (props: {
             </div>
           </form>
         </div>
-
         <div className="flex items-center gap-3 2xsm:gap-7">
           <ul className="flex items-center gap-2 2xsm:gap-4">
+            <NavLink to="/new-expertise">
+              <Button>
+                Yeni Rapor Başlat
+                <PlusCircle />
+              </Button>
+            </NavLink>
+
             {/* <!-- Dark Mode Toggler --> */}
             <DarkModeSwitcher />
             {/* <!-- Dark Mode Toggler --> */}

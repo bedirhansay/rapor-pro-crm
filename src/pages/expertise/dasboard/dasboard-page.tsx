@@ -1,9 +1,9 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { VehicleBodyInfo } from '../vehicle-body/vehicle-body';
-import { VehicleChassisInfo } from '../vehicle-chassis';
-import { VehicleInfo } from '../vehicle-info/vehicle-info';
+import { VehicleBodyInfo } from '../pages/vehicle-body/vehicle-body';
+import { VehicleChassisInfo } from '../pages/vehicle-chassis';
+import { VehicleInfo } from '../pages/vehicle-info/vehicle-info';
 
-export const DashboardPage = () => {
+export const NewExpertise = () => {
   return (
     <div>
       <Tabs defaultValue="account">

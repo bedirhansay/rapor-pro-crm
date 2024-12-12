@@ -1,4 +1,4 @@
-import { Header } from '@/components/header';
+import { ColorHeader } from '@/components/ColorHeader/ColorHeader';
 import { FormControl, InputLabel, MenuItem, Popover, Select } from '@mui/material';
 import { useState } from 'react';
 
@@ -45,7 +45,7 @@ export const VehicleBodyInfo = () => {
 
   return (
     <div className="grid grid-cols-[1fr,4fr]  gap-3">
-      <Header />
+      <ColorHeader />
       <div className="relative w-full h-full flex justify-end bg-rd">
         <svg className="rotate-90 h-auto" viewBox="0 0 700 700">
           {/* //! DIŞ ÇİZGİLER  */}

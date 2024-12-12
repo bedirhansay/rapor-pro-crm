@@ -3,15 +3,16 @@ import { LoginPage } from '@/pages/expertise/pages/auth/login/login-page';
 import PageTitle from '@/components/PageTitle';
 import SignIn from '@/pages/Authentication/SignIn';
 import SignUp from '@/pages/Authentication/SignUp';
+import Chart from '@/pages/Chart';
 import ECommerce from '@/pages/Dashboard/ECommerce';
+import { NewExpertise } from '@/pages/expertise/dasboard/dasboard-page';
 import FormElements from '@/pages/Form/FormElements';
+import FormLayout from '@/pages/Form/FormLayout';
 import Profile from '@/pages/Profile';
-import { Calendar, Settings } from 'lucide-react';
+import Tables from '@/pages/Tables';
 import Alerts from '@/pages/UiElements/Alerts';
 import Buttons from '@/pages/UiElements/Buttons';
-import Chart from '@/pages/Chart';
-import Tables from '@/pages/Tables';
-import FormLayout from '@/pages/Form/FormLayout';
+import { Calendar, Settings } from 'lucide-react';
 
 export const authRoutes = [
   {
@@ -45,6 +46,15 @@ export const userRoutes = [
       <>
         <PageTitle title="eCommerce Dashboard | Rapor Pro - Tailwind CSS Admin Dashboard Template" />
         <ECommerce />
+      </>
+    ),
+  },
+  {
+    path: '/new-expertise',
+    component: (
+      <>
+        <PageTitle title="Yeni Kayıt" />
+        <NewExpertise />
       </>
     ),
   },

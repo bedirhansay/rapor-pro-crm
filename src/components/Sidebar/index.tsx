@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-import Logo from '../../images/logo/logo.svg';
+import LogoIcon from '../../images/icon/logo-icon.png';
 import SidebarLinkGroup from './SidebarLinkGroup';
 
 interface SidebarProps {
@@ -17,19 +17,14 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
   const storedSidebarExpanded = localStorage.getItem('sidebar-expanded');
   const [sidebarExpanded, setSidebarExpanded] = useState(
-    storedSidebarExpanded === null ? false : storedSidebarExpanded === 'true',
+    storedSidebarExpanded === null ? false : storedSidebarExpanded === 'true'
   );
 
   // close on click outside
   useEffect(() => {
     const clickHandler = ({ target }: MouseEvent) => {
       if (!sidebar.current || !trigger.current) return;
-      if (
-        !sidebarOpen ||
-        sidebar.current.contains(target) ||
-        trigger.current.contains(target)
-      )
-        return;
+      if (!sidebarOpen || sidebar.current.contains(target) || trigger.current.contains(target)) return;
       setSidebarOpen(false);
     };
     document.addEventListener('click', clickHandler);
@@ -58,15 +53,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
   return (
     <aside
       ref={sidebar}
-      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-black duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
+      className={`absolute left-0 top-0 z-9999 flex h-screen w-72.5 flex-col overflow-y-hidden bg-foreground duration-300 ease-linear dark:bg-boxdark lg:static lg:translate-x-0 ${
         sidebarOpen ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
       {/* <!-- SIDEBAR HEADER --> */}
       <div className="flex items-center justify-between gap-2 px-6 py-5.5 lg:py-6.5">
-        <NavLink to="/">
-          <img src={Logo} alt="Logo" />
-        </NavLink>
+        <img className=" rounded-lg w-full " src={LogoIcon} alt="Logo" />
 
         <button
           ref={trigger}
@@ -97,32 +90,22 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
         <nav className="mt-5 py-4 px-4 lg:mt-9 lg:px-6">
           {/* <!-- Menu Group --> */}
           <div>
-            <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
-              MENU
-            </h3>
+            <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">MENU</h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
               {/* <!-- Menu Item Dashboard --> */}
-              <SidebarLinkGroup
-                activeCondition={
-                  pathname === '/' || pathname.includes('dashboard')
-                }
-              >
+              <SidebarLinkGroup activeCondition={pathname === '/' || pathname.includes('dashboard')}>
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
                       <NavLink
                         to="#"
                         className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                          (pathname === '/' ||
-                            pathname.includes('dashboard')) &&
-                          'bg-graydark dark:bg-meta-4'
+                          (pathname === '/' || pathname.includes('dashboard')) && 'bg-graydark dark:bg-meta-4'
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
-                          sidebarExpanded
-                            ? handleClick()
-                            : setSidebarExpanded(true);
+                          sidebarExpanded ? handleClick() : setSidebarExpanded(true);
                         }}
                       >
                         <svg
@@ -152,9 +135,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         </svg>
                         Dashboard
                         <svg
-                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${
-                            open && 'rotate-180'
-                          }`}
+                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${open && 'rotate-180'}`}
                           width="20"
                           height="20"
                           viewBox="0 0 20 20"
@@ -170,11 +151,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         </svg>
                       </NavLink>
                       {/* <!-- Dropdown Menu Start --> */}
-                      <div
-                        className={`translate transform overflow-hidden ${
-                          !open && 'hidden'
-                        }`}
-                      >
+                      <div className={`translate transform overflow-hidden ${!open && 'hidden'}`}>
                         <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
                           <li>
                             <NavLink
@@ -201,8 +178,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <NavLink
                   to="/calendar"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('calendar') &&
-                    'bg-graydark dark:bg-meta-4'
+                    pathname.includes('calendar') && 'bg-graydark dark:bg-meta-4'
                   }`}
                 >
                   <svg
@@ -254,26 +230,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item Profile --> */}
 
               {/* <!-- Menu Item Forms --> */}
-              <SidebarLinkGroup
-                activeCondition={
-                  pathname === '/forms' || pathname.includes('forms')
-                }
-              >
+              <SidebarLinkGroup activeCondition={pathname === '/forms' || pathname.includes('forms')}>
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
                       <NavLink
                         to="#"
                         className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                          (pathname === '/forms' ||
-                            pathname.includes('forms')) &&
-                          'bg-graydark dark:bg-meta-4'
+                          (pathname === '/forms' || pathname.includes('forms')) && 'bg-graydark dark:bg-meta-4'
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
-                          sidebarExpanded
-                            ? handleClick()
-                            : setSidebarExpanded(true);
+                          sidebarExpanded ? handleClick() : setSidebarExpanded(true);
                         }}
                       >
                         <svg
@@ -307,9 +275,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         </svg>
                         Forms
                         <svg
-                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${
-                            open && 'rotate-180'
-                          }`}
+                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${open && 'rotate-180'}`}
                           width="20"
                           height="20"
                           viewBox="0 0 20 20"
@@ -325,11 +291,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         </svg>
                       </NavLink>
                       {/* <!-- Dropdown Menu Start --> */}
-                      <div
-                        className={`translate transform overflow-hidden ${
-                          !open && 'hidden'
-                        }`}
-                      >
+                      <div className={`translate transform overflow-hidden ${!open && 'hidden'}`}>
                         <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
                           <li>
                             <NavLink
@@ -386,12 +348,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     </g>
                     <defs>
                       <clipPath id="clip0_130_9756">
-                        <rect
-                          width="18"
-                          height="18"
-                          fill="white"
-                          transform="translate(0 0.052124)"
-                        />
+                        <rect width="18" height="18" fill="white" transform="translate(0 0.052124)" />
                       </clipPath>
                     </defs>
                   </svg>
@@ -405,8 +362,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                 <NavLink
                   to="/settings"
                   className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                    pathname.includes('settings') &&
-                    'bg-graydark dark:bg-meta-4'
+                    pathname.includes('settings') && 'bg-graydark dark:bg-meta-4'
                   }`}
                 >
                   <svg
@@ -429,12 +385,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     </g>
                     <defs>
                       <clipPath id="clip0_130_9763">
-                        <rect
-                          width="18"
-                          height="18"
-                          fill="white"
-                          transform="translate(0 0.052124)"
-                        />
+                        <rect width="18" height="18" fill="white" transform="translate(0 0.052124)" />
                       </clipPath>
                     </defs>
                   </svg>
@@ -447,9 +398,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
 
           {/* <!-- Others Group --> */}
           <div>
-            <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">
-              OTHERS
-            </h3>
+            <h3 className="mb-4 ml-4 text-sm font-semibold text-bodydark2">OTHERS</h3>
 
             <ul className="mb-6 flex flex-col gap-1.5">
               {/* <!-- Menu Item Chart --> */}
@@ -480,12 +429,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                     </g>
                     <defs>
                       <clipPath id="clip0_130_9801">
-                        <rect
-                          width="18"
-                          height="18"
-                          fill="white"
-                          transform="translate(0 0.052124)"
-                        />
+                        <rect width="18" height="18" fill="white" transform="translate(0 0.052124)" />
                       </clipPath>
                     </defs>
                   </svg>
@@ -495,23 +439,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item Chart --> */}
 
               {/* <!-- Menu Item Ui Elements --> */}
-              <SidebarLinkGroup
-                activeCondition={pathname === '/ui' || pathname.includes('ui')}
-              >
+              <SidebarLinkGroup activeCondition={pathname === '/ui' || pathname.includes('ui')}>
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
                       <NavLink
                         to="#"
                         className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                          (pathname === '/ui' || pathname.includes('ui')) &&
-                          'bg-graydark dark:bg-meta-4'
+                          (pathname === '/ui' || pathname.includes('ui')) && 'bg-graydark dark:bg-meta-4'
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
-                          sidebarExpanded
-                            ? handleClick()
-                            : setSidebarExpanded(true);
+                          sidebarExpanded ? handleClick() : setSidebarExpanded(true);
                         }}
                       >
                         <svg
@@ -538,20 +477,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </g>
                           <defs>
                             <clipPath id="clip0_130_9807">
-                              <rect
-                                width="18"
-                                height="18"
-                                fill="white"
-                                transform="translate(0 0.052124)"
-                              />
+                              <rect width="18" height="18" fill="white" transform="translate(0 0.052124)" />
                             </clipPath>
                           </defs>
                         </svg>
                         UI Elements
                         <svg
-                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${
-                            open && 'rotate-180'
-                          }`}
+                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${open && 'rotate-180'}`}
                           width="20"
                           height="20"
                           viewBox="0 0 20 20"
@@ -567,11 +499,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         </svg>
                       </NavLink>
                       {/* <!-- Dropdown Menu Start --> */}
-                      <div
-                        className={`translate transform overflow-hidden ${
-                          !open && 'hidden'
-                        }`}
-                      >
+                      <div className={`translate transform overflow-hidden ${!open && 'hidden'}`}>
                         <ul className="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
                           <li>
                             <NavLink
@@ -605,25 +533,18 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
               {/* <!-- Menu Item Ui Elements --> */}
 
               {/* <!-- Menu Item Auth Pages --> */}
-              <SidebarLinkGroup
-                activeCondition={
-                  pathname === '/auth' || pathname.includes('auth')
-                }
-              >
+              <SidebarLinkGroup activeCondition={pathname === '/auth' || pathname.includes('auth')}>
                 {(handleClick, open) => {
                   return (
                     <React.Fragment>
                       <NavLink
                         to="#"
                         className={`group relative flex items-center gap-2.5 rounded-sm py-2 px-4 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 ${
-                          (pathname === '/auth' || pathname.includes('auth')) &&
-                          'bg-graydark dark:bg-meta-4'
+                          (pathname === '/auth' || pathname.includes('auth')) && 'bg-graydark dark:bg-meta-4'
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
-                          sidebarExpanded
-                            ? handleClick()
-                            : setSidebarExpanded(true);
+                          sidebarExpanded ? handleClick() : setSidebarExpanded(true);
                         }}
                       >
                         <svg
@@ -646,20 +567,13 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                           </g>
                           <defs>
                             <clipPath id="clip0_130_9814">
-                              <rect
-                                width="18"
-                                height="18"
-                                fill="white"
-                                transform="translate(0 0.052124)"
-                              />
+                              <rect width="18" height="18" fill="white" transform="translate(0 0.052124)" />
                             </clipPath>
                           </defs>
                         </svg>
                         Authentication
                         <svg
-                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${
-                            open && 'rotate-180'
-                          }`}
+                          className={`absolute right-4 top-1/2 -translate-y-1/2 fill-current ${open && 'rotate-180'}`}
                           width="20"
                           height="20"
                           viewBox="0 0 20 20"
@@ -675,11 +589,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }: SidebarProps) => {
                         </svg>
                       </NavLink>
                       {/* <!-- Dropdown Menu Start --> */}
-                      <div
-                        className={`translate transform overflow-hidden ${
-                          !open && 'hidden'
-                        }`}
-                      >
+                      <div className={`translate transform overflow-hidden ${!open && 'hidden'}`}>
                         <ul className="mt-4 mb-5.5 flex flex-col gap-2.5 pl-6">
                           <li>
                             <NavLink
