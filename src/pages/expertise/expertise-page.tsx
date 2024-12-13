@@ -8,18 +8,18 @@ export const NewExpertise = () => {
   return (
     <div className="">
       <Tabs defaultValue="account">
-        <TabsList className="p-2 overflow-auto">
-          <TabsTrigger className="flex items-center gap-2  px-6" value="account">
-            <FileText />
-            Araç Ruhsat Bilgileri
+        <TabsList className="sm:p-2 overflow-auto">
+          <TabsTrigger className="flex items-center gap-2  md:px-6" value="account">
+            <FileText className="hidden sm:flex" />
+            Ruhsat Bilgileri
           </TabsTrigger>
-          <TabsTrigger className="flex items-center gap-2  px-6" value="body">
-            <Car />
-            Araç Gövdesi Bilgileri
+          <TabsTrigger className="flex items-center gap-2 md:px-6" value="body">
+            <Car className="hidden sm:flex" />
+            Gövdesi Bilgileri
           </TabsTrigger>
-          <TabsTrigger className="flex items-center gap-2  px-6" value="chassis">
-            <Package />
-            Araç Şasi Bilgileri
+          <TabsTrigger className="flex items-center gap-2  md:px-6" value="chassis">
+            <Package className="hidden sm:flex" />
+            Şasi Bilgileri
           </TabsTrigger>
         </TabsList>
         <TabsContent className="w-full " value="account">

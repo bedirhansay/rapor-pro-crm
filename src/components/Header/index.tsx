@@ -1,7 +1,6 @@
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, PlusCircle } from 'lucide-react';
-import { Link, NavLink } from 'react-router-dom';
-import LogoIcon from '../../images/icon/logo-icon.png';
+import { NavLink } from 'react-router-dom';
 import BaseSidebar from '../Sidebar/base-sidebar';
 import { Button } from '../ui/button';
 import DarkModeSwitcher from './DarkModeSwitcher';
@@ -24,25 +23,23 @@ const Header = () => {
               <BaseSidebar />
             </SheetContent>
           </Sheet>
-
-          <Link className="block flex-shrink-0 lg:hidden" to="/">
-            <img className=" rounded-lg h-8" src={LogoIcon} alt="Logo" />
-          </Link>
         </div>
 
-        <div className="hidden sm:block">
+        <div className="">
           <NavLink to="/new-expertise">
             <Button>
-              Yeni Rapor Başlat
+              Yeni Rapor
               <PlusCircle />
             </Button>
           </NavLink>
         </div>
         <div className="flex items-center gap-3 2xsm:gap-7">
           <ul className="flex items-center gap-2 2xsm:gap-4">
-            <DarkModeSwitcher />
-            <DropdownNotification />
-            <DropdownMessage />
+            <div className="hidden md:flex items-center gap-2 2xsm:gap-4">
+              <DarkModeSwitcher />
+              <DropdownNotification />
+              <DropdownMessage />
+            </div>
           </ul>
           <DropdownUser />
         </div>
