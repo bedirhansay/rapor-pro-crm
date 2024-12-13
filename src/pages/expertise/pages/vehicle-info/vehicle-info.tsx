@@ -34,9 +34,8 @@ export const VehicleInfo = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="py-4  grid grid-cols-12 gap-12 ">
+    <form onSubmit={handleSubmit(onSubmit)} className="py-4  grid lg:grid-cols-12 grid-cols-1 gap-12 ">
       <div className="h-fit col-span-4 rounded-lg overflow-hidden flex flex-col gap-8 relative">
-        <h2 className="text-xl font-semibold border-b p-2">Araç Görseli</h2>
         <img src={Car} />
 
         <div className="flex">
@@ -157,9 +156,7 @@ export const VehicleInfo = () => {
         </div>
 
         {/* Gönder Butonu */}
-        <Button type="submit" className="w-full bg-blue-600 text-white py-2 rounded">
-          Gönder
-        </Button>
+        <Button type="submit">Gönder</Button>
       </div>
     </form>
   );

@@ -273,7 +273,7 @@ span.flatpickr-weekday,
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-neutral-900 text-foreground;
   }
 }
 

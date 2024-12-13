@@ -1,18 +1,17 @@
-import { LoginPage } from '@/pages/expertise/pages/auth/login/login-page';
+import { LoginPage } from '@/pages/Authentication/login/login-page';
 
 import PageTitle from '@/components/PageTitle';
 import SignIn from '@/pages/Authentication/SignIn';
 import SignUp from '@/pages/Authentication/SignUp';
+import CalendarPage from '@/pages/Calendar';
 import Chart from '@/pages/Chart';
 import ECommerce from '@/pages/Dashboard/ECommerce';
-import { NewExpertise } from '@/pages/expertise/dasboard/dasboard-page';
+import { NewExpertise } from '@/pages/expertise/expertise-page';
 import FormElements from '@/pages/Form/FormElements';
 import FormLayout from '@/pages/Form/FormLayout';
 import Profile from '@/pages/Profile';
 import Tables from '@/pages/Tables';
-import Alerts from '@/pages/UiElements/Alerts';
-import Buttons from '@/pages/UiElements/Buttons';
-import { Calendar, Settings } from 'lucide-react';
+import { Settings } from 'lucide-react';
 
 export const authRoutes = [
   {
@@ -63,7 +62,7 @@ export const userRoutes = [
     component: (
       <>
         <PageTitle title="Calendar | Rapor Pro - Tailwind CSS Admin Dashboard Template" />
-        <Calendar />
+        <CalendarPage />
       </>
     ),
   },
@@ -118,24 +117,6 @@ export const userRoutes = [
       <>
         <PageTitle title="Basic Chart | Rapor Pro - Tailwind CSS Admin Dashboard Template" />
         <Chart />
-      </>
-    ),
-  },
-  {
-    path: '/ui/alerts',
-    component: (
-      <>
-        <PageTitle title="Alerts | Rapor Pro - Tailwind CSS Admin Dashboard Template" />
-        <Alerts />
-      </>
-    ),
-  },
-  {
-    path: '/ui/buttons',
-    component: (
-      <>
-        <PageTitle title="Buttons | Rapor Pro - Tailwind CSS Admin Dashboard Template" />
-        <Buttons />
       </>
     ),
   },
