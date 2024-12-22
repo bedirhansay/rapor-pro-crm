@@ -1,10 +1,11 @@
 #!/bin/sh
-export OPEN_API_CLI=openapi-generator-cli.jar
 export G=typescript-axios
 export C=./open-api-generator-config.json
-export O=./src/apis/
+export O=./src/@apis/
 
+rm -rf $O/*/interfaces/* 
 rm -rf $O/*/services/* 
-find ./src/apis/*/interfaces/  ! -name any-type.ts -delete
+find ./src/@apis/*/interfaces/  ! -name any-type.ts -delete
 
-openapi-generator generate -i https://bosluk.nes.com.tr/v1.swagger.json -g $G  -o $O/car-api -c $C
+
+openapi-generator generate -i https://api.rapor.pro/v1.swagger.json -g $G  -o $O/rapor-pro-api -c $C
