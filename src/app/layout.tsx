@@ -1,20 +1,16 @@
-import { getEvents } from '@/data'
+import { ClientProvider } from '@/lib/providers/provider'
 import '@/styles/tailwind.css'
 import type { Metadata } from 'next'
-import type React from 'react'
-import { ApplicationLayout } from './application-layout'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Catalyst',
-    default: 'Catalyst',
+    template: '%s - Rapor Pro',
+    default: 'Rapor Pro',
   },
   description: '',
 }
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  let events = await getEvents()
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
       lang="en"
@@ -25,7 +21,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
       </head>
       <body>
-        <ApplicationLayout events={events}>{children}</ApplicationLayout>
+        <ClientProvider>{children}</ClientProvider>
       </body>
     </html>
   )
