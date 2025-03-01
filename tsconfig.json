@@ -1,27 +1,31 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx",
-    "strict": true,
-    "esModuleInterop": true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "moduleResolution": "node",
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "esnext",
-    "outDir": "./dist",
-    "target": "es6",
-    "lib": ["es6", "dom"],
-    "baseUrl": "./",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
       "@/*": ["./src/*"],
-      "@pages/*": ["src/pages/*"],
-      "@components/*": ["src/components/*"],
-      "@routes/*": ["src/lib/routes/*"],
-      "@layout/*": ["src/layout/*"],
-      "@middleware/*": ["src/lib/middleware/*"],
-      "@utils/*": ["src/lib/utils/*"],
-      "@hooks/*": ["src/lib/hooks/*"],
-      "@helper/*": ["src/helper/*"]
+      "@apis/*": ["./src/@apis/*"],
+      "@components/*": ["./src/components/*"],
+      "@hooks/*": ["./src/lib/hooks/*"],
+      "@utils/*": ["./src/lib/utils/*"],
+      "@lib/*": ["./src/lib/*"]
     }
   },
-  "include": ["src", "src/lib/hooks/full-screen.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }
