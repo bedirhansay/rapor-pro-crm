@@ -20,6 +20,7 @@ import {
   SidebarSection,
   SidebarSpacer,
 } from '@/components/ui/sidebar'
+import { getEvents } from '@/data'
 import {
   ChevronDownIcon,
   ChevronUpIcon,
@@ -34,7 +35,7 @@ import {
 import { usePathname } from 'next/navigation'
 import { AccountDropdownMenu } from './dropdown-menu'
 
-export function SidebarMenu({ events }: { events: { id: string; name: string; url: string }[] }) {
+export function SidebarMenu({ events }: { events: Awaited<ReturnType<typeof getEvents>> }) {
   const pathname = usePathname()
 
   return (
