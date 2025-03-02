@@ -8,20 +8,14 @@ import { Link } from '@/components/ui/link'
 import { Select } from '@/components/ui/select'
 import { getEvents } from '@/data'
 import { EllipsisVerticalIcon, MagnifyingGlassIcon } from '@heroicons/react/16/solid'
-import type { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Events',
-}
-
-export default async function Events() {
+export default async function Reports() {
   let events = await getEvents()
-
   return (
     <>
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div className="max-sm:w-full sm:flex-1">
-          <Heading>Events</Heading>
+          <Heading>Raporlar</Heading>
           <div className="mt-4 flex max-w-xl gap-4">
             <div className="flex-1">
               <InputGroup>
@@ -31,14 +25,14 @@ export default async function Events() {
             </div>
             <div>
               <Select name="sort_by">
-                <option value="name">Sort by name</option>
-                <option value="date">Sort by date</option>
-                <option value="status">Sort by status</option>
+                <option value="name">İsimle Sırala</option>
+                <option value="date">Tarihe Göre Sırala</option>
+                <option value="status">Duruma Göre Sırala</option>
               </Select>
             </div>
           </div>
         </div>
-        <Button>Create event</Button>
+        <Button>Yeni Rapor Ekle</Button>
       </div>
       <ul className="mt-10">
         {events.map((event, index) => (
@@ -72,9 +66,9 @@ export default async function Events() {
                     <EllipsisVerticalIcon />
                   </DropdownButton>
                   <DropdownMenu anchor="bottom end">
-                    <DropdownItem href={event.url}>View</DropdownItem>
-                    <DropdownItem>Edit</DropdownItem>
-                    <DropdownItem>Delete</DropdownItem>
+                    <DropdownItem href={event.url}>Görüntüle</DropdownItem>
+                    <DropdownItem>Düzenle</DropdownItem>
+                    <DropdownItem>Sil</DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </div>

@@ -1,8 +1,8 @@
-import { Stat } from '@/app/(root)/stat'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Heading, Subheading } from '@/components/ui/heading'
 import { Link } from '@/components/ui/link'
+import { Stat } from '@/components/ui/stat'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { getEvent, getEventOrders } from '@/data'
 import { ChevronLeftIcon } from '@heroicons/react/16/solid'
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   }
 }
 
-export default async function Event({ params }: { params: { id: string } }) {
+export default async function SingleReport({ params }: { params: { id: string } }) {
   let event = await getEvent(params.id)
   let orders = await getEventOrders(params.id)
 
@@ -30,7 +30,7 @@ export default async function Event({ params }: { params: { id: string } }) {
       <div className="max-lg:hidden">
         <Link href="/events" className="inline-flex items-center gap-2 text-sm/6 text-zinc-500 dark:text-zinc-400">
           <ChevronLeftIcon className="size-4 fill-zinc-400 dark:fill-zinc-500" />
-          Events
+          Raporlar
         </Link>
       </div>
       <div className="mt-4 flex flex-wrap items-end justify-between gap-4">
@@ -62,14 +62,14 @@ export default async function Event({ params }: { params: { id: string } }) {
         />
         <Stat title="Pageviews" value={event.pageViews} change={event.pageViewsChange} />
       </div>
-      <Subheading className="mt-12">Recent orders</Subheading>
+      <Subheading className="mt-12">Son Raporlar</Subheading>
       <Table className="mt-4 [--gutter:--spacing(6)] lg:[--gutter:--spacing(10)]">
         <TableHead>
           <TableRow>
-            <TableHeader>Order number</TableHeader>
-            <TableHeader>Purchase date</TableHeader>
-            <TableHeader>Customer</TableHeader>
-            <TableHeader className="text-right">Amount</TableHeader>
+            <TableHeader>Rapor ID</TableHeader>
+            <TableHeader>Tarih</TableHeader>
+            <TableHeader>Müşteri</TableHeader>
+            <TableHeader className="text-right">Tutar</TableHeader>
           </TableRow>
         </TableHead>
         <TableBody>

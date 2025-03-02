@@ -1,7 +1,7 @@
-import { Stat } from '@/app/(root)/stat'
 import { Avatar } from '@/components/ui/avatar'
 import { Heading, Subheading } from '@/components/ui/heading'
 import { Select } from '@/components/ui/select'
+import { Stat } from '@/components/ui/stat'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 import { getRecentOrders } from '@/data'
 

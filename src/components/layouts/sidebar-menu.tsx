@@ -1,5 +1,6 @@
 'use client'
 
+import { AddNewReportButton } from '@/components/add-new-report'
 import { Avatar } from '@/components/ui/avatar'
 import {
   Dropdown,
@@ -14,7 +15,6 @@ import {
   SidebarBody,
   SidebarFooter,
   SidebarHeader,
-  SidebarHeading,
   SidebarItem,
   SidebarLabel,
   SidebarSection,
@@ -33,13 +33,15 @@ import {
   TicketIcon,
 } from '@heroicons/react/20/solid'
 import { usePathname } from 'next/navigation'
+import { DarkModeSwitch } from '../dark-mode'
 import { AccountDropdownMenu } from './dropdown-menu'
-
 export function SidebarMenu({ events }: { events: Awaited<ReturnType<typeof getEvents>> }) {
   const pathname = usePathname()
 
   return (
     <Sidebar>
+      <AddNewReportButton />
+
       <SidebarHeader>
         <Dropdown>
           <DropdownButton as={SidebarItem}>
@@ -74,41 +76,49 @@ export function SidebarMenu({ events }: { events: Awaited<ReturnType<typeof getE
         <SidebarSection>
           <SidebarItem href="/" current={pathname === '/'}>
             <HomeIcon />
-            <SidebarLabel>Home</SidebarLabel>
+            <SidebarLabel>Ana Sayfa</SidebarLabel>
           </SidebarItem>
-          <SidebarItem href="/events" current={pathname.startsWith('/events')}>
+          <SidebarItem href="/reports" current={pathname.startsWith('/reports')}>
             <Square2StackIcon />
-            <SidebarLabel>Events</SidebarLabel>
+            <SidebarLabel>Raporlar</SidebarLabel>
+          </SidebarItem>
+          <SidebarItem href="/users" current={pathname.startsWith('/users')}>
+            <Square2StackIcon />
+            <SidebarLabel>Kullanıcılar</SidebarLabel>
           </SidebarItem>
           <SidebarItem href="/orders" current={pathname.startsWith('/orders')}>
             <TicketIcon />
-            <SidebarLabel>Orders</SidebarLabel>
+            <SidebarLabel>Siparişler</SidebarLabel>
           </SidebarItem>
           <SidebarItem href="/settings" current={pathname.startsWith('/settings')}>
             <Cog6ToothIcon />
-            <SidebarLabel>Settings</SidebarLabel>
+            <SidebarLabel>Ayarlar</SidebarLabel>
           </SidebarItem>
         </SidebarSection>
 
-        <SidebarSection className="max-lg:hidden">
+        {/* <SidebarSection className="max-lg:hidden">
           <SidebarHeading>Upcoming Events</SidebarHeading>
           {events.map((event) => (
             <SidebarItem key={event.id} href={event.url}>
               {event.name}
             </SidebarItem>
           ))}
-        </SidebarSection>
+        </SidebarSection> */}
 
         <SidebarSpacer />
 
         <SidebarSection>
           <SidebarItem href="#">
+            <DarkModeSwitch />
+            <SidebarLabel>Tema</SidebarLabel>
+          </SidebarItem>
+          <SidebarItem href="#">
             <QuestionMarkCircleIcon />
-            <SidebarLabel>Support</SidebarLabel>
+            <SidebarLabel>Destek</SidebarLabel>
           </SidebarItem>
           <SidebarItem href="#">
             <SparklesIcon />
-            <SidebarLabel>Changelog</SidebarLabel>
+            <SidebarLabel>Değişlikler</SidebarLabel>
           </SidebarItem>
         </SidebarSection>
       </SidebarBody>
@@ -116,7 +126,7 @@ export function SidebarMenu({ events }: { events: Awaited<ReturnType<typeof getE
         <Dropdown>
           <DropdownButton as={SidebarItem}>
             <span className="flex min-w-0 items-center gap-3">
-              <Avatar src="/users/erica.jpg" className="size-10" square alt="" />
+              <Avatar src="/users/user.jpg" className="size-10" square alt="" />
               <span className="min-w-0">
                 <span className="block truncate text-sm/5 font-medium text-zinc-950 dark:text-white">Bedirhan</span>
                 <span className="block truncate text-xs/5 font-normal text-zinc-500 dark:text-zinc-400">
