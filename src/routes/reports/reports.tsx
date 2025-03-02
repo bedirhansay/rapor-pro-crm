@@ -1,3 +1,5 @@
+
+
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Divider } from '@/components/ui/divider'
@@ -32,7 +34,9 @@ export default async function Reports() {
             </div>
           </div>
         </div>
-        <Button>Yeni Rapor Ekle</Button>
+        <Button>
+          <Link href="/new-reports">Yeni Rapor Ekle</Link>
+        </Button>
       </div>
       <ul className="mt-10">
         {events.map((event, index) => (
