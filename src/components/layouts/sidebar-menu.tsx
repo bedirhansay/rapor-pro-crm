@@ -45,7 +45,7 @@ export function SidebarMenu({ events }: { events: Awaited<ReturnType<typeof getE
       <SidebarHeader>
         <Dropdown>
           <DropdownButton as={SidebarItem}>
-            <Avatar src="/teams/Rapor Pro.svg" />
+            <Avatar src="/teams/catalyst.svg" />
             <SidebarLabel>Rapor Pro</SidebarLabel>
             <ChevronDownIcon />
           </DropdownButton>
@@ -56,7 +56,7 @@ export function SidebarMenu({ events }: { events: Awaited<ReturnType<typeof getE
             </DropdownItem>
             <DropdownDivider />
             <DropdownItem href="#">
-              <Avatar slot="icon" src="/teams/Rapor Pro.svg" />
+              <Avatar slot="icon" src="/teams/catalyst.svg" />
               <DropdownLabel>Rapor Pro</DropdownLabel>
             </DropdownItem>
             <DropdownItem href="#">

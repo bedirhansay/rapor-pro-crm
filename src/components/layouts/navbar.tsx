@@ -12,7 +12,7 @@ export function NavbarMenu() {
       <NavbarSection>
         <Dropdown>
           <DropdownButton as={NavbarItem}>
-            <Avatar src="/users/erica.jpg" square />
+            <Avatar src="/users/user.jpg" square />
           </DropdownButton>
           <AccountDropdownMenu anchor="bottom end" />
         </Dropdown>
