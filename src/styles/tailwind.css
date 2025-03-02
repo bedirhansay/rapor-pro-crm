@@ -16,3 +16,11 @@
     color-scheme: light !important;
   }
 }
+
+@custom-variant dark {
+  @media not print {
+    .dark & {
+      @slot;
+    }
+  }
+}

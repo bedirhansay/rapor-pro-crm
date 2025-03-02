@@ -9,7 +9,7 @@ export function ClientProvider({ children }: { children: React.ReactNode }) {
   const queryClient = new QueryClient()
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="light">
       <QueryClientProvider client={queryClient}>
         <Toaster />
         {children}

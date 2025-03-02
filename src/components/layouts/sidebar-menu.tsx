@@ -33,8 +33,8 @@ import {
   TicketIcon,
 } from '@heroicons/react/20/solid'
 import { usePathname } from 'next/navigation'
-import { DarkModeSwitch } from '../dark-mode'
 import { AccountDropdownMenu } from './dropdown-menu'
+import { DarkModeSwitch } from '../dark-mode'
 export function SidebarMenu({ events }: { events: Awaited<ReturnType<typeof getEvents>> }) {
   const pathname = usePathname()
 
@@ -109,16 +109,15 @@ export function SidebarMenu({ events }: { events: Awaited<ReturnType<typeof getE
 
         <SidebarSection>
           <SidebarItem href="#">
-            <DarkModeSwitch />
-            <SidebarLabel>Tema</SidebarLabel>
-          </SidebarItem>
-          <SidebarItem href="#">
             <QuestionMarkCircleIcon />
             <SidebarLabel>Destek</SidebarLabel>
           </SidebarItem>
           <SidebarItem href="#">
             <SparklesIcon />
             <SidebarLabel>Değişlikler</SidebarLabel>
+          </SidebarItem>
+          <SidebarItem href="#">
+            <DarkModeSwitch />
           </SidebarItem>
         </SidebarSection>
       </SidebarBody>
