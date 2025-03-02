@@ -1,13 +1,12 @@
-import { Car } from '@/assets';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { Camera } from 'lucide-react';
-import { Controller, useForm } from 'react-hook-form';
-import { z } from 'zod';
-import { vehicleSchema } from './schema/vehicle-info-schema';
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { Camera } from 'lucide-react'
+import { Controller, useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { vehicleSchema } from './schema/vehicle-info-schema'
 
-type VehicleForm = z.infer<typeof vehicleSchema>;
+type VehicleForm = z.infer<typeof vehicleSchema>
 
 export const VehicleInfo = () => {
   const {
@@ -26,17 +25,17 @@ export const VehicleInfo = () => {
       registrationDate: '',
       ownerName: '',
     },
-  });
+  })
 
   const onSubmit = (data: VehicleForm) => {
-    console.log('Form Data:', data);
-    alert('Form başarıyla gönderildi!');
-  };
+    console.log('Form Data:', data)
+    alert('Form başarıyla gönderildi!')
+  }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="py-4  grid lg:grid-cols-12 grid-cols-1 gap-12 ">
-      <div className="h-fit col-span-4 rounded-lg overflow-hidden flex flex-col gap-8 relative">
-        <img src={Car} />
+    <form onSubmit={handleSubmit(onSubmit)} className="grid grid-cols-1 gap-12 py-4 lg:grid-cols-12">
+      <div className="relative col-span-4 flex h-fit flex-col gap-8 overflow-hidden rounded-lg">
+        <img src={'/images/car.png'} />
 
         <div className="flex">
           <Button type="button" className="w-full">
@@ -55,7 +54,7 @@ export const VehicleInfo = () => {
             control={control}
             render={({ field }) => <Input {...field} id="licensePlate" placeholder="Plaka giriniz" />}
           />
-          {errors.licensePlate && <p className="text-red-600 text-sm">{errors.licensePlate.message}</p>}
+          {errors.licensePlate && <p className="text-sm text-red-600">{errors.licensePlate.message}</p>}
         </div>
 
         {/* Şasi Numarası */}
@@ -68,7 +67,7 @@ export const VehicleInfo = () => {
             control={control}
             render={({ field }) => <Input {...field} id="chassisNumber" placeholder="Şasi numarası giriniz" />}
           />
-          {errors.chassisNumber && <p className="text-red-600 text-sm">{errors.chassisNumber.message}</p>}
+          {errors.chassisNumber && <p className="text-sm text-red-600">{errors.chassisNumber.message}</p>}
         </div>
 
         {/* Motor Hacmi */}
@@ -83,7 +82,7 @@ export const VehicleInfo = () => {
               <Input {...field} id="engineCapacity" type="number" placeholder="Motor hacmini giriniz" />
             )}
           />
-          {errors.engineCapacity && <p className="text-red-600 text-sm">{errors.engineCapacity.message}</p>}
+          {errors.engineCapacity && <p className="text-sm text-red-600">{errors.engineCapacity.message}</p>}
         </div>
 
         {/* Motor Gücü */}
@@ -98,7 +97,7 @@ export const VehicleInfo = () => {
               <Input {...field} id="enginePower" type="number" placeholder="Motor gücünü giriniz" />
             )}
           />
-          {errors.enginePower && <p className="text-red-600 text-sm">{errors.enginePower.message}</p>}
+          {errors.enginePower && <p className="text-sm text-red-600">{errors.enginePower.message}</p>}
         </div>
 
         {/* Araç Rengi */}
@@ -111,7 +110,7 @@ export const VehicleInfo = () => {
             control={control}
             render={({ field }) => <Input {...field} id="color" placeholder="Araç rengi giriniz" />}
           />
-          {errors.color && <p className="text-red-600 text-sm">{errors.color.message}</p>}
+          {errors.color && <p className="text-sm text-red-600">{errors.color.message}</p>}
         </div>
 
         {/* Araç Tipi */}
@@ -126,7 +125,7 @@ export const VehicleInfo = () => {
               <Input {...field} id="vehicleType" placeholder="Araç tipi giriniz (ör. Sedan, SUV)" />
             )}
           />
-          {errors.vehicleType && <p className="text-red-600 text-sm">{errors.vehicleType.message}</p>}
+          {errors.vehicleType && <p className="text-sm text-red-600">{errors.vehicleType.message}</p>}
         </div>
 
         {/* Tescil Tarihi */}
@@ -139,7 +138,7 @@ export const VehicleInfo = () => {
             control={control}
             render={({ field }) => <Input {...field} id="registrationDate" />}
           />
-          {errors.registrationDate && <p className="text-red-600 text-sm">{errors.registrationDate.message}</p>}
+          {errors.registrationDate && <p className="text-sm text-red-600">{errors.registrationDate.message}</p>}
         </div>
 
         {/* Araç Sahibinin Adı */}
@@ -152,12 +151,12 @@ export const VehicleInfo = () => {
             control={control}
             render={({ field }) => <Input {...field} id="ownerName" placeholder="Araç sahibinin adını giriniz" />}
           />
-          {errors.ownerName && <p className="text-red-600 text-sm">{errors.ownerName.message}</p>}
+          {errors.ownerName && <p className="text-sm text-red-600">{errors.ownerName.message}</p>}
         </div>
 
         {/* Gönder Butonu */}
         <Button type="submit">Gönder</Button>
       </div>
     </form>
-  );
-};
+  )
+}
