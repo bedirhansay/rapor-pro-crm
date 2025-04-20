@@ -113,7 +113,7 @@ export function Accounting() {
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <CardTitle className="text-xl font-semibold text-gray-800">İşlemler</CardTitle>
               <div className="flex items-center gap-2">
-                <Button variant="outline" className="rounded-lg">
+                <Button className="rounded-lg">
                   <Download className="mr-2 h-4 w-4" /> Dışa Aktar
                 </Button>
                 <Button className="rounded-lg">
