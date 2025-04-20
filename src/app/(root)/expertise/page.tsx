@@ -1,4 +1,4 @@
-import Expertise from '@/features/expertise/expertise'
+import ExpertiseRoute from '@/features/expertise/expertise'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -6,5 +6,5 @@ export const metadata: Metadata = {
 }
 
 export default async function Page() {
-  return <Expertise />
+  return <ExpertiseRoute />
 }

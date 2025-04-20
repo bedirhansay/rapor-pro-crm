@@ -1,6 +1,5 @@
 'use client'
 
-import { AddNewReportButton } from '@/components/add-new-report'
 import { Avatar } from '@/components/ui/avatar'
 import {
   Dropdown,
@@ -41,7 +40,7 @@ export function SidebarMenu({ events }: { events: Awaited<ReturnType<typeof getE
 
   return (
     <Sidebar>
-      <AddNewReportButton />
+      {/* <AddNewReportButton /> */}
 
       <SidebarHeader>
         <Dropdown>

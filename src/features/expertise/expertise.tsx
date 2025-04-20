@@ -1,41 +1,81 @@
 'use client'
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { FaCarSide, FaFile } from 'react-icons/fa'
-import { GoPackage } from 'react-icons/go'
+import { Button } from '@/components/ui/button'
+import { Card } from '@/components/ui/card'
 
-import { VehicleBodyInfo } from './components/vehicle-body/vehicle-body'
-import { VehicleChassisInfo } from './components/vehicle-chassis'
-import { VehicleInfo } from './components/vehicle-info/vehicle-info'
+import { useEffect } from 'react'
+import { steps } from './constant'
+import { useExpertiseStore } from './store/expertise-store'
 
-export default function Expertise() {
+// Step components will be imported here
+import { AdditionalInfo } from './components/additional-info'
+import { CustomerInfo } from './components/customer-info'
+import { LicenceSection } from './components/licence/licence'
+import { PartsStatus } from './components/parts-status'
+import { PhotoSection } from './components/photos/photo'
+import { Preview } from './components/preview'
+import Starter from './components/starter'
+import { Stepper } from './components/stepper'
+import { VehicleInfo } from './components/vehicle-info'
+
+const stepComponents = [
+  Starter,
+  LicenceSection,
+  CustomerInfo,
+  PhotoSection,
+  VehicleInfo,
+  PartsStatus,
+  AdditionalInfo,
+  Preview,
+]
+
+export default function ExpertiseRoute() {
+  const { currentStep, setCurrentStep, validateCurrentStep, isValid } = useExpertiseStore()
+
+  useEffect(() => {
+    validateCurrentStep()
+  }, [currentStep, validateCurrentStep])
+
+  const CurrentStepComponent = stepComponents[currentStep]
+
+  const handleNext = () => {
+    setCurrentStep(currentStep + 1)
+    if (currentStep < steps.length - 1 && isValid) {
+      setCurrentStep(currentStep + 1)
+    }
+  }
+
+  const handleBack = () => {
+    setCurrentStep(currentStep - 1)
+    if (currentStep > 0) {
+      setCurrentStep(currentStep - 1)
+    }
+  }
+
+  const handleStart = () => {
+    setCurrentStep(1)
+  }
+
+  if (currentStep === 0) {
+    return (
+      <div className="container mx-auto px-4 py-8">
+        <Card className="p-6">
+          <Starter onStart={handleStart} />
+        </Card>
+      </div>
+    )
+  }
+
   return (
-    <div className="">
-      <Tabs defaultValue="account">
-        <TabsList className="overflow-auto sm:p-2">
-          <TabsTrigger className="flex items-center gap-2 md:px-6" value="account">
-            <FaFile className="hidden sm:flex" />
-            Ruhsat Bilgileri
-          </TabsTrigger>
-          <TabsTrigger className="flex items-center gap-2 md:px-6" value="body">
-            <FaCarSide className="hidden sm:flex" />
-            Gövdesi Bilgileri
-          </TabsTrigger>
-          <TabsTrigger className="flex items-center gap-2 md:px-6" value="chassis">
-            <GoPackage className="hidden sm:flex" />
-            Şasi Bilgileri
-          </TabsTrigger>
-        </TabsList>
-        <TabsContent className="w-full" value="account">
-          <VehicleInfo />
-        </TabsContent>
-        <TabsContent className="" value="body">
-          <VehicleBodyInfo />
-        </TabsContent>
-        <TabsContent value="chassis">
-          <VehicleChassisInfo />
-        </TabsContent>
-      </Tabs>
+    <div className="container mx-auto px-4 py-8">
+      <Stepper currentStep={currentStep} />
+
+      <CurrentStepComponent onStart={handleStart} currentStep={currentStep} />
+
+      <div className="mt-8 flex justify-between rounded-lg border p-4 shadow-md">
+        <Button onClick={handleBack}>Geri</Button>
+        <Button onClick={handleNext}>{currentStep === steps.length - 1 ? 'Tamamla' : 'İleri'}</Button>
+      </div>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import { Checkbox, CheckboxField } from '@/components/ui/checkbox'
 import { Dialog, DialogActions, DialogBody, DialogDescription, DialogTitle } from '@/components/ui/dialog'
 import { Description, Field, FieldGroup, Label } from '@/components/ui/fieldset'
 import { Input } from '@/components/ui/input'
-import { Select } from '@/components/ui/select'
+import { Select } from '@/components/ui/selects'
 import { useState } from 'react'
 
 export function RefundOrder({ amount, ...props }: { amount: string } & React.ComponentPropsWithoutRef<typeof Button>) {
