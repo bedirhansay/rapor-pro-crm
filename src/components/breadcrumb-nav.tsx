@@ -25,7 +25,6 @@ export function BreadcrumbNav({ pageName, dynamicTitle }: BreadcrumbNavProps) {
         {items.map((item, index) => {
           const isLast = index === items.length - 1
 
-          // If it's the last item and we have a dynamic title, use that instead
           const title = isLast && dynamicTitle ? dynamicTitle : item.title
 
           return (

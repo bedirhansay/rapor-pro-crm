@@ -1,4 +1,4 @@
-import { Packages } from '@/features/packages/packages'
+import { Packages } from '@/features/packages/packages-routes'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
