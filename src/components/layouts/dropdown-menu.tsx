@@ -1,34 +1,34 @@
 'use client'
 
 import { DropdownDivider, DropdownItem, DropdownLabel, DropdownMenu } from '@/components/ui/dropdown'
-import {
-  ArrowRightStartOnRectangleIcon,
-  LightBulbIcon,
-  ShieldCheckIcon,
-  UserCircleIcon,
-} from '@heroicons/react/16/solid'
+import { Lightbulb, LogOut, Shield, UserCircle } from 'lucide-react'
+import React from 'react'
+import { accountDropdownMenuItems } from './contant'
 
 export function AccountDropdownMenu({ anchor }: { anchor: 'top start' | 'bottom end' }) {
+  // Map icon names to components
+  const iconMap: Record<string, React.ComponentType<any>> = {
+    UserCircle,
+    Shield,
+    Lightbulb,
+    LogOut,
+  }
+
   return (
     <DropdownMenu className="min-w-64" anchor={anchor}>
-      <DropdownItem href="#">
-        <UserCircleIcon />
-        <DropdownLabel>My account</DropdownLabel>
-      </DropdownItem>
-      <DropdownDivider />
-      <DropdownItem href="#">
-        <ShieldCheckIcon />
-        <DropdownLabel>Privacy policy</DropdownLabel>
-      </DropdownItem>
-      <DropdownItem href="#">
-        <LightBulbIcon />
-        <DropdownLabel>Share feedback</DropdownLabel>
-      </DropdownItem>
-      <DropdownDivider />
-      <DropdownItem href="#">
-        <ArrowRightStartOnRectangleIcon />
-        <DropdownLabel>Sign out</DropdownLabel>
-      </DropdownItem>
+      {accountDropdownMenuItems.map((item, index) => {
+        const IconComponent = iconMap[item.icon]
+        return (
+          <React.Fragment key={index}>
+            {index === 1 && <DropdownDivider />}
+            {index === 3 && <DropdownDivider />}
+            <DropdownItem href={item.href}>
+              <IconComponent className="h-4 w-4" />
+              <DropdownLabel>{item.label}</DropdownLabel>
+            </DropdownItem>
+          </React.Fragment>
+        )
+      })}
     </DropdownMenu>
   )
 }

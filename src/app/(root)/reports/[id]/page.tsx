@@ -1,5 +1,5 @@
 import { getEvent, getEventOrders } from '@/data'
-import SingleReport from '@/routes/reports/single-reports'
+import SingleReport from '@/features/reports/single-reports'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
@@ -21,7 +21,7 @@ export default async function Event({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <SingleReport params={params} />
+      <SingleReport id={params.id} />
     </>
   )
 }

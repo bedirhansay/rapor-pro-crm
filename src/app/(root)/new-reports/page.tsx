@@ -1,4 +1,4 @@
-import NewReport from '@/routes/new-report/new-report'
+import NewReport from '@/features/expertise/expertise'
 
 export default function NewReports() {
   return <NewReport />

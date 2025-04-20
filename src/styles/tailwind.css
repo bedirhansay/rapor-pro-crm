@@ -170,3 +170,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+@border {
+  @apply rounded-lg border border-gray-900/20;
+}

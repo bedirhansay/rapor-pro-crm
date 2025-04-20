@@ -1,7 +1,7 @@
-import { DescriptionDetails, DescriptionList, DescriptionTerm } from '@/components/ui/description-list'
 import { Avatar } from '@/components/ui/avatar'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { DescriptionDetails, DescriptionList, DescriptionTerm } from '@/components/ui/description-list'
 import { Divider } from '@/components/ui/divider'
 import { Heading, Subheading } from '@/components/ui/heading'
 import { Link } from '@/components/ui/link'
@@ -60,9 +60,7 @@ export default async function Order({ params }: { params: { id: string } }) {
             </span>
           </div>
           <div className="flex gap-4">
-            <RefundOrder outline amount={order.amount.usd}>
-              Refund
-            </RefundOrder>
+            <RefundOrder amount={order.amount.usd}>Refund</RefundOrder>
             <Button>Resend Invoice</Button>
           </div>
         </div>

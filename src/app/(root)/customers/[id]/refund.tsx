@@ -45,9 +45,7 @@ export function RefundOrder({ amount, ...props }: { amount: string } & React.Com
           </FieldGroup>
         </DialogBody>
         <DialogActions>
-          <Button plain onClick={() => setIsOpen(false)}>
-            Cancel
-          </Button>
+          <Button onClick={() => setIsOpen(false)}>Cancel</Button>
           <Button onClick={() => setIsOpen(false)}>Refund</Button>
         </DialogActions>
       </Dialog>

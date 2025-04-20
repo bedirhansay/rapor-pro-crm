@@ -1,10 +1,10 @@
-import Reports from '@/features/reports/reports'
+import { Branches } from '@/features/branches/branches'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Raporlar',
+  title: 'Şubeler',
 }
 
 export default async function Page() {
-  return <Reports />
+  return <Branches />
 }

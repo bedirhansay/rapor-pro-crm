@@ -19,7 +19,7 @@ export default function SignIn() {
     resolver: zodResolver(loginSchema),
     defaultValues: {
       username: 'info@coskunotoekspertiz.com',
-      password: 'P@ssword123!?',
+      password: 'Admin123!?',
       rememberMe: false,
     },
   })

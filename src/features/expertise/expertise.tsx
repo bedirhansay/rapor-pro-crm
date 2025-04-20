@@ -8,7 +8,7 @@ import { VehicleBodyInfo } from './components/vehicle-body/vehicle-body'
 import { VehicleChassisInfo } from './components/vehicle-chassis'
 import { VehicleInfo } from './components/vehicle-info/vehicle-info'
 
-export default function NewReport() {
+export default function Expertise() {
   return (
     <div className="">
       <Tabs defaultValue="account">

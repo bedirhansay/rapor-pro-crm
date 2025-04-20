@@ -1,10 +1,10 @@
-import Reports from '@/features/reports/reports'
+import Expertise from '@/features/expertise/expertise'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Raporlar',
+  title: 'Paketler',
 }
 
 export default async function Page() {
-  return <Reports />
+  return <Expertise />
 }
