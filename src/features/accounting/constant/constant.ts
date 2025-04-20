@@ -1,3 +1,5 @@
+import { TransactionStatus } from '@/lib/utils/status-badge'
+
 export enum TransactionType {
   INCOME = 'Gelir',
   EXPENSE = 'Gider',
@@ -21,12 +23,6 @@ export enum TransactionCategory {
   OTHER = 'Diğer',
 }
 
-export enum TransactionStatus {
-  COMPLETED = 'Tamamlandı',
-  PENDING = 'Beklemede',
-  CANCELLED = 'İptal Edildi',
-}
-
 export interface Transaction {
   id: string
   date: string
@@ -40,7 +36,6 @@ export interface Transaction {
   attachments?: string[]
 }
 
-// Mock data for transactions
 export const transactions: Transaction[] = [
   {
     id: '1',
@@ -99,7 +94,6 @@ export const transactions: Transaction[] = [
   },
 ]
 
-// Financial summary data
 export interface FinancialSummary {
   totalIncome: number
   totalExpense: number

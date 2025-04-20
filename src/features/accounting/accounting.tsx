@@ -7,9 +7,10 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Dropdown, DropdownButton, DropdownItem, DropdownMenu } from '@/components/ui/dropdown'
 import { Input } from '@/components/ui/input'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { TransactionStatus } from '@/lib/utils'
 import { ArrowDownRight, ArrowUpRight, BadgeDollarSign, Calendar, Download, Filter, Plus, Wallet } from 'lucide-react'
 import { useState } from 'react'
-import { TransactionCategory, TransactionStatus, TransactionType, financialSummary, transactions } from './constant'
+import { TransactionCategory, TransactionType, financialSummary, transactions } from './constant/constant'
 
 export function Accounting() {
   const [searchQuery, setSearchQuery] = useState('')
