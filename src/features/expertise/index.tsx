@@ -11,20 +11,19 @@ import { useExpertiseStore } from './store/expertise-store'
 import { AdditionalInfo } from './components/additional-info'
 import { CustomerInfo } from './components/customer-info'
 import { LicenceSection } from './components/licence/licence'
-import { PartsStatus } from './components/parts-status'
+import Packages from './components/packages'
 import { PhotoSection } from './components/photos/photo'
 import { Preview } from './components/preview'
 import Starter from './components/starter'
 import { Stepper } from './components/stepper'
-import { VehicleInfo } from './components/vehicle-info'
-
+import VehicleCondition from './components/vehicle-condition/expertise'
 const stepComponents = [
   Starter,
   LicenceSection,
   CustomerInfo,
   PhotoSection,
-  VehicleInfo,
-  PartsStatus,
+  Packages,
+  VehicleCondition,
   AdditionalInfo,
   Preview,
 ]
@@ -56,6 +55,10 @@ export default function ExpertiseRoute() {
     setCurrentStep(1)
   }
 
+  const handleReset = () => {
+    setCurrentStep(0)
+  }
+
   if (currentStep === 0) {
     return (
       <div className="container mx-auto px-4 py-8">
@@ -72,8 +75,9 @@ export default function ExpertiseRoute() {
 
       <CurrentStepComponent onStart={handleStart} currentStep={currentStep} />
 
-      <div className="mt-8 flex justify-between rounded-lg border p-4 shadow-md">
+      <div className="absolute right-0 bottom-10 left-0 mx-auto flex max-w-md justify-between rounded-lg border p-4 shadow-md">
         <Button onClick={handleBack}>Geri</Button>
+        <Button onClick={handleReset}>Sıfırla</Button>
         <Button onClick={handleNext}>{currentStep === steps.length - 1 ? 'Tamamla' : 'İleri'}</Button>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import ExpertiseRoute from '@/features/expertise/expertise'
+import ExpertiseRoute from '@/features/expertise'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {

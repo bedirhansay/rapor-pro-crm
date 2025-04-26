@@ -1,4 +1,4 @@
-import NewReport from '@/features/expertises/expertise'
+import NewReport from '@/features/expertise/components/vehicle-condition/expertise'
 
 export default function NewReports() {
   return <NewReport />

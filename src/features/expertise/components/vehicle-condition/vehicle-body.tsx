@@ -44,11 +44,15 @@ export const VehicleBodyInfo = () => {
   }
 
   return (
-    <div className="flex gap-3">
+    <div className="grid h-full w-full grid-cols-1 items-center justify-center gap-3">
       <div className="flex h-full w-full flex-col lg:flex-row">
         <ColorHeader />
-        <div className="bg-rd relative flex h-full w-full justify-end">
-          <svg className="h-auto rotate-90" viewBox="0 0 700 700">
+        <div className="w-full">
+          <svg
+            className="h-auto max-w-3xl rotate-90 lg:ml-60"
+            viewBox="0 0 600 700"
+            preserveAspectRatio="xMidYMid meet"
+          >
             {/* //! DIŞ ÇİZGİLER  */}
 
             <path

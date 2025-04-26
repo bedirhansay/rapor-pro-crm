@@ -100,8 +100,8 @@ export const initialFormData: ExpertiseFormData = {
 export const steps = [
   {
     id: 'customer-info',
-    title: 'Müşteri Bilgileri',
-    description: 'Müşteri ve araç plaka bilgilerini girin',
+    title: 'Expertise Başlangıç',
+    description: 'Expertise başlangıç bilgilerini girin',
   },
   {
     id: 'customer-select',
@@ -118,17 +118,18 @@ export const steps = [
     title: 'Fotoğraflar',
     description: 'Aracın fotoğraflarını çekin',
   },
+  {
+    id: 'packages',
+    title: 'Paket Seçimi',
+    description: 'Paket seçin',
+  },
 
   {
-    id: 'vehicle-info',
-    title: 'Araç Bilgileri',
-    description: 'Araç detaylarını girin',
+    id: 'vehicle-condition',
+    title: 'Araç Durumu',
+    description: 'Araç durumunu belirleyin',
   },
-  {
-    id: 'parts-status',
-    title: 'Parça Durumları',
-    description: 'Kaporta ve şasi durumunu belirleyin',
-  },
+
   {
     id: 'additional-info',
     title: 'Ek Bilgiler',

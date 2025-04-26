@@ -174,3 +174,29 @@
 @border {
   @apply rounded-lg border border-gray-900/20;
 }
+
+.st0 {
+  stroke-miterlimit: 10;
+}
+
+.st0,
+.st1,
+.st2 {
+  fill: none;
+}
+
+.st0,
+.st1,
+.st2,
+.st3 {
+  stroke: #000;
+}
+
+.st2,
+.st3 {
+  stroke-width: 2px;
+}
+
+.st4 {
+  fill: #fff;
+}
