@@ -75,7 +75,7 @@ export default function ExpertiseRoute() {
 
       <CurrentStepComponent onStart={handleStart} currentStep={currentStep} />
 
-      <div className="absolute right-0 bottom-10 left-0 mx-auto flex max-w-md justify-between rounded-lg border p-4 shadow-md">
+      <div className="flex justify-between rounded-lg border p-4 shadow-md">
         <Button onClick={handleBack}>Geri</Button>
         <Button onClick={handleReset}>Sıfırla</Button>
         <Button onClick={handleNext}>{currentStep === steps.length - 1 ? 'Tamamla' : 'İleri'}</Button>

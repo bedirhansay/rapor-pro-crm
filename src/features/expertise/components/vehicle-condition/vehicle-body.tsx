@@ -46,11 +46,10 @@ export const VehicleBodyInfo = () => {
   return (
     <div className="grid h-full w-full grid-cols-1 items-center justify-center gap-3">
       <div className="flex h-full w-full flex-col lg:flex-row">
-        <ColorHeader />
         <div className="w-full">
           <svg
-            className="h-auto max-w-3xl rotate-90 lg:ml-60"
-            viewBox="0 0 600 700"
+            className="h-auto max-w-4xl rotate-90 lg:ml-24"
+            viewBox="0 0 700 700"
             preserveAspectRatio="xMidYMid meet"
           >
             {/* //! DIŞ ÇİZGİLER  */}
@@ -378,6 +377,7 @@ export const VehicleBodyInfo = () => {
             </g>
           </svg>
         </div>
+        <ColorHeader />
       </div>
 
       <Popover
