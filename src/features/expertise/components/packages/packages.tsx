@@ -3,9 +3,9 @@
 import { Button } from '@/components/ui/button'
 import { Card } from '@/components/ui/card'
 import { Check } from 'lucide-react'
-import { useExpertiseStore } from '../store/expertise-store'
+import { useExpertiseStore } from '../../store/expertise-store'
 
-export default function Packages() {
+export const PackageStep = () => {
   const { setCurrentStep } = useExpertiseStore()
 
   const packages = [

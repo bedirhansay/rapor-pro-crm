@@ -8,13 +8,14 @@ import { steps } from './constant'
 import { useExpertiseStore } from './store/expertise-store'
 
 // Step components will be imported here
-import { AdditionalInfo } from './components/additional-info'
-import { CustomerInfo } from './components/customer-info'
+import { AdditionalInfo } from './components/additional-info/additional-info'
+import { CustomerInfo } from './components/customer-info/customer-info'
 import { LicenceSection } from './components/licence/licence'
-import Packages from './components/packages'
+
+import { PackageStep } from './components/packages/packages'
 import { PhotoSection } from './components/photos/photo'
 import { Preview } from './components/preview'
-import Starter from './components/starter'
+import Starter from './components/starter/starter'
 import { Stepper } from './components/stepper'
 import VehicleCondition from './components/vehicle-condition/expertise'
 const stepComponents = [
@@ -22,7 +23,7 @@ const stepComponents = [
   LicenceSection,
   CustomerInfo,
   PhotoSection,
-  Packages,
+  PackageStep,
   VehicleCondition,
   AdditionalInfo,
   Preview,
